@@ -1,13 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>menu_dificultades</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">menu_dificultades</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h1 id="title">
+    Selecciona la dificultad:
+  </h1>
+  <div class="contenedor-botones">
+    <ion-button color="dark" (click)="redirectEasy()" class="botones_menu">Fácil</ion-button>
+    <ion-button color="dark" (click)="redirectMedium()" class="botones_menu">Simplemente meh</ion-button>
+    <ion-button color="dark" class="botones_menu">Imposible</ion-button>
+  </div>
+        
+  <ion-button class="bottom-left-button" color="dark" (click)="toPrincipal()" shape="round">
+    <ion-icon slot="icon-only" name="home"></ion-icon>
+  </ion-button>
 </ion-content>

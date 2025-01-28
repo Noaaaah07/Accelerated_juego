@@ -11,10 +11,6 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'menu',
-    loadComponent: () => import('./menu/menu.page').then( m => m.MenuPage)
-  },
-  {
     path: 'menu-dificultades',
     loadComponent: () => import('./menu-dificultades/menu-dificultades.page').then( m => m.MenuDificultadesPage)
   },

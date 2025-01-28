@@ -1,0 +1,29 @@
+#title{
+    text-align: center;
+    margin-top: 10%;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.contenedor-botones{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5%;
+  
+}
+.bottom-left-button {
+    position: fixed;
+    bottom: 3px;
+    left: 3px;
+    z-index: 10;
+  }
+.botones_menu{
+    border-radius: 0;
+}
+ion-content{
+    --background:none;
+    height: 100%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/009/749/967/non_2x/wave-background-in-blue-color-with-line-elements-technology-startup-game-suitable-for-websites-mobile-applications-posters-games-printing-and-more-free-vector.jpg);
+    background-size: cover;
+    background-position: center;
+}

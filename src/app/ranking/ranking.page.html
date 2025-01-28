@@ -1,13 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>ranking</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ranking</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>EMAIL</ion-col>
+      <ion-col>NOMBRE</ion-col>
+      <ion-col>PUNTUACION</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col> {{ user.id }} </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+      <ion-button id="botonCasa" (click)="toPrincipal()" shape="round">
+        <ion-icon color="dark" slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+  </ion-grid>
+
 </ion-content>

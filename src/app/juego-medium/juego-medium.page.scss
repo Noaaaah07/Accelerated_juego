@@ -1,0 +1,58 @@
+.botones_juego{
+    height: 60px;
+    width: 60px;
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+#puntuacion{
+    margin-left: 74%;
+}
+.botones{
+    margin-top: 5%;
+    display: inline-block;
+    padding: 12px 24px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    text-align: center;
+    color: #000000; /* Color del texto */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente */
+    border: none; /* Sin bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    cursor: pointer; /* Mano al pasar */
+    transition: all 0.3s ease-in-out; /* Animación suave */
+}
+#start{
+    width: 120px;
+    height: 60px;
+    margin-left: 39%;
+    display: inline-block;
+    padding: 12px 24px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    text-align: center;
+    color: #000000; /* Color del texto */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente */
+    border: none; /* Sin bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    cursor: pointer; /* Mano al pasar */
+    transition: all 0.3s ease-in-out; /* Animación suave */
+}
+.timerypuntuacion{
+    
+  display: flex;
+  justify-content: center;  // Centra el contenido horizontalmente
+  align-items: center;      // Centra el contenido verticalmente
+  height: 100%;   
+}
+ion-content{
+    --background:none;
+    height: 100%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/009/749/967/non_2x/wave-background-in-blue-color-with-line-elements-technology-startup-game-suitable-for-websites-mobile-applications-posters-games-printing-and-more-free-vector.jpg);
+    background-size: cover;
+    background-position: center;
+}
