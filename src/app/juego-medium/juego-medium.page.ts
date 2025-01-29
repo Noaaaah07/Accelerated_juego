@@ -147,9 +147,6 @@ export class JuegoMediumPage implements OnInit {
       color: 'success',
     },
   ]
-
-  ngOnInit() {
-  }
   async mostrarAlerta() {
     const alert = await this.alertController.create({
       header: 'Instrucciones y tutorial de juego',
@@ -159,8 +156,16 @@ export class JuegoMediumPage implements OnInit {
     });
   await alert.present();
   }
-  toPrincipal(){
-    this.navController.navigateForward('/principal')
+  ngOnInit() {  }
+  async mostrarAlertaFin() {
+    const alert = await this.alertController.create({
+      subHeader: `Tu puntuación ha sido de ${this.puntuacion} puntos`,
+    });
+  await alert.present();
+  let intervalo = setInterval(() => {
+    this.refreshPage()
+    clearInterval(intervalo)
+  },5000)
   }
   
   deshabilitarBoton(color : string){
@@ -183,10 +188,8 @@ export class JuegoMediumPage implements OnInit {
           this.isRunning = false;
         }
         if (this.isRunning == false){
-          this.refreshPage()
-          
+          this.mostrarAlertaFin();
         }
-        
       }, 1000);
       for (let i = this.juego.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1)); // Generar índice aleatorio
@@ -196,5 +199,7 @@ export class JuegoMediumPage implements OnInit {
   refreshPage() {
     window.location.reload();
   }
-
+  toPrincipal(){
+    this.navController.navigateForward('/home')
+  }
 }

@@ -15,15 +15,16 @@ export class MenuDificultadesPage implements OnInit {
 
   constructor(private navController: NavController, private http: HttpClient,private alertController: AlertController) { }
 
+  
   ngOnInit() {
   }
   redirectEasy(){
-    this.navController.navigateForward('/juego')
+    this.navController.navigateForward('/juego-easy')
   }
   toPrincipal(){
-    this.navController.navigateForward('/principal')
+    this.navController.navigateForward('/home')
   }
   redirectMedium(){
-    this.navController.navigateForward('/juegodificultadmedia')
+    this.navController.navigateForward('/juego-medium')
   }
 }

@@ -26,7 +26,7 @@ export class RankingPage implements OnInit {
     this.loadUser
   }
   toPrincipal(){
-    this.navController.navigateForward('/principal')
+    this.navController.navigateForward('/home')
   }
   loadUser(){
     this.http.get(`http://localhost:3000/user/${this.id}`).subscribe((response : any) => {

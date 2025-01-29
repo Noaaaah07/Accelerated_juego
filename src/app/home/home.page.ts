@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
   }
 
   pasarMenu(){
-    this.navController.navigateForward('/menudificultades')
+    this.navController.navigateForward('/menu-dificultades')
   }
   pasarRanking(){
     this.navController.navigateForward('/ranking')

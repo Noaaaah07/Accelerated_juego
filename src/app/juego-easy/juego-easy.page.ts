@@ -155,8 +155,6 @@ export class JuegoEasyPage implements OnInit {
     },
   ]
 
-  ngOnInit() {
-  }
   async mostrarAlerta() {
     const alert = await this.alertController.create({
       header: 'Instrucciones y tutorial de juego',
@@ -166,18 +164,26 @@ export class JuegoEasyPage implements OnInit {
     });
   await alert.present();
   }
-  toPrincipal(){
-    this.navController.navigateForward('/principal')
+  ngOnInit() {  }
+  async mostrarAlertaFin() {
+    const alert = await this.alertController.create({
+      subHeader: `Tu puntuación ha sido de ${this.puntuacion} puntos`,
+    });
+  await alert.present();
+  let intervalo = setInterval(() => {
+    this.refreshPage()
+    clearInterval(intervalo)
+  },3000)
   }
   
-  deshabilitarBoton(){
-
+  deshabilitarBoton( color : string){
     this.activeButton += 1;
-    this.puntuacion += 1;
-    console.log(this.puntuacion)    
+    if(color == 'success'){
+      this.puntuacion += 1
+    }
     }
 
-    startTimer() {
+    async startTimer() {
       this.activeButton = 1;
       this.isRunning = true;
       this.timer = setInterval(() => {
@@ -186,12 +192,11 @@ export class JuegoEasyPage implements OnInit {
         } else {
           clearInterval(this.timer);
           this.isRunning = false;
-          alert(`¡El tiempo ha terminado! Tu puntuación ha sido de ${this.puntuacion} puntos. Pulsa el botón de reinicio si quieres volver a jugar`);
         }
-        if (this.seconds == 0){
-          this.activeButton = 0
+        if (this.isRunning == false){
+          this.mostrarAlertaFin();
         }
-      }, 1000);  
+      }, 1000);
       for (let i = this.juego.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1)); // Generar índice aleatorio
         [this.juego[i], this.juego[j]] = [this.juego[j], this.juego[i]]; // Intercambiar elementos
@@ -200,5 +205,7 @@ export class JuegoEasyPage implements OnInit {
   refreshPage() {
     window.location.reload();
   }
-
+  toPrincipal(){
+    this.navController.navigateForward('/home')
+  }
 }

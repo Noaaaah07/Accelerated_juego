@@ -14,7 +14,7 @@
 </ion-grid>
   <ion-grid>
       @for(boton of juego; track boton; let i = $index){
-      <ion-button (click)="deshabilitarBoton()" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" id="botones_juego" shape="round"></ion-button>
+      <ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" id="botones_juego" shape="round"></ion-button>
     }
     </ion-grid>
 <ion-row>
