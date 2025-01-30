@@ -10,9 +10,10 @@
        
     <ion-grid>
        <ion-col>
-        <b id="id">
-          {{ user.id }}
-        </b>
+        <p>
+          User name: {{ auth_user?.email }}
+          <ion-img src="auth_user?.picture" alt="auth_user?.picture"></ion-img>
+        </p>
       </ion-col>
     </ion-grid>
 </ion-content>
