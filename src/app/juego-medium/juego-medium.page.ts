@@ -17,7 +17,7 @@ export class JuegoMediumPage implements OnInit {
 
   public activeButton: number = 0;
   public puntuacion: number = 0;
-  public seconds: number = 15;  
+  public seconds: number = 20;  
   public timer: any;            
   public isRunning: boolean = false;
   public juego :any = [
@@ -165,7 +165,7 @@ export class JuegoMediumPage implements OnInit {
   let intervalo = setInterval(() => {
     this.refreshPage()
     clearInterval(intervalo)
-  },5000)
+  },2000)
   }
   
   deshabilitarBoton(color : string){

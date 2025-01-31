@@ -17,7 +17,7 @@ export class JuegoEasyPage implements OnInit {
 
   public activeButton: number = 0;
   public puntuacion = 0 ;
-  public seconds: number = 15;  
+  public seconds: number = 25;  
   public timer: any;            
   public isRunning: boolean = false;
   public juego :any =[
@@ -169,11 +169,11 @@ export class JuegoEasyPage implements OnInit {
     const alert = await this.alertController.create({
       subHeader: `Tu puntuación ha sido de ${this.puntuacion} puntos`,
     });
-  await alert.present();
-  let intervalo = setInterval(() => {
-    this.refreshPage()
-    clearInterval(intervalo)
-  },3000)
+    await alert.present();
+    let intervalo = setInterval(() => {
+      this.refreshPage()
+      clearInterval(intervalo)
+    },2000)
   }
   
   deshabilitarBoton( color : string){

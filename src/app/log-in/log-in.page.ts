@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular'
 import { AuthService } from '@auth0/auth0-angular';
@@ -14,7 +14,7 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class LogInPage implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(@Inject(DOCUMENT) public document : Document,private auth: AuthService) { }
 
   ngOnInit() {
   }
@@ -24,6 +24,14 @@ export class LogInPage implements OnInit {
         target: '/home'
       }
     });
+  }
+
+  logOut(){
+      this.auth.logout({
+        logoutParams: {
+          returnTo: this.document.location.origin
+        }
+      });
   }
 
 }

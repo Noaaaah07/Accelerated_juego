@@ -20,10 +20,10 @@
 <ion-row>
   <ion-grid>
     <ion-col>
-      <ion-button id="casita" class="botones" color="transparent" fill="none" (click)="toPrincipal()" shape="round">
+      <ion-button id="casita" class="botones" color="transparent" fill="none" (click)="toPrincipal()" shape="round" [disabled]="activeButton">
         <ion-icon slot="icon-only" name="home"></ion-icon>
       </ion-button>
-      <ion-button class="botones" color="transparent" fill="none" (click)="refreshPage()" shape="round">
+      <ion-button class="botones" color="transparent" fill="none" (click)="refreshPage()" shape="round" [disabled]="activeButton">
         <ion-icon slot="icon-only" name="reload-circle"></ion-icon>
       </ion-button>
       <ion-button class="botones" id="start" (click)="startTimer()" color="transparent" fill="none" [disabled]="activeButton">·START·</ion-button>
