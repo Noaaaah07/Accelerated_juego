@@ -5,19 +5,19 @@ import { AlertController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular'
 
 @Component({
-  selector: 'app-juego-medium',
-  templateUrl: './juego-medium.page.html',
-  styleUrls: ['./juego-medium.page.scss'],
+  selector: 'app-juego-dificil',
+  templateUrl: './juego-dificil.page.html',
+  styleUrls: ['./juego-dificil.page.scss'],
   standalone:true,
   imports: [IonicModule]
 })
-export class JuegoMediumPage implements OnInit {
+export class JuegoDificilPage implements OnInit {
 
   constructor(private navController: NavController, private http: HttpClient,private alertController: AlertController) { }
 
   public activeButton: number = 0;
   public puntuacion: number = 0;
-  public seconds: number = 20;  
+  public seconds: number = 15;  
   public timer: any;            
   public isRunning: boolean = false;
   public juego :any = [
@@ -26,17 +26,33 @@ export class JuegoMediumPage implements OnInit {
       color: 'success',
     },
     {
+      id:1,
+      color: 'danger',
+    },
+    {
+      id:2,
+      color: 'warning',
+
+    },
+    {
       id:2,
       color: 'success',
     },
     {
       id:3,
+      color: 'success',
+    },
+    {
+      id:3,
       color: 'danger',
-
     },
     {
       id:4,
       color: 'success',
+    },
+    {
+      id:4,
+      color: 'danger',
     },
     {
       id:5,
@@ -47,28 +63,36 @@ export class JuegoMediumPage implements OnInit {
       color: 'success',
     },
     {
+      id:6,
+      color: 'danger',
+    },
+    {
       id:7,
       color: 'success',
     },
     {
-      id:7,
-      color: 'danger',
+      id:8,
+      color: 'warning',
     },
     {
       id:8,
       color: 'success',
     },
     {
+      id:8,
+      color: 'danger',
+    },
+    {
       id:9,
       color: 'success',
     },
     {
-      id:10,
-      color: 'success',
+      id:9,
+      color: 'danger',
     },
     {
       id:10,
-      color: 'danger',
+      color: 'success',
     },
     {
       id:11,
@@ -79,12 +103,20 @@ export class JuegoMediumPage implements OnInit {
       color: 'success',
     },
     {
+      id:12,
+      color: 'danger',
+    },
+    {
       id:13,
       color: 'success',
     },
     {
       id:13,
       color: 'danger',
+    },
+    {
+      id:13,
+      color: 'warning',
     },
     {
       id:14,
@@ -112,39 +144,7 @@ export class JuegoMediumPage implements OnInit {
     },
     {
       id:18,
-      color: 'success',
-    },
-    {
-      id:19,
-      color: 'success',
-    },
-    {
-      id:20,
-      color: 'success',
-    },
-    {
-      id:21,
-      color: 'success',
-    },
-    {
-      id:22,
-      color: 'success',
-    },
-    {
-      id:23,
-      color: 'danger',
-    },
-    {
-      id:23,
-      color: 'success',
-    },
-    {
-      id:24,
-      color: 'success',
-    },
-    {
-      id:25,
-      color: 'success',
+      color: 'warning',
     },
   ]
   async mostrarAlerta() {
@@ -172,8 +172,10 @@ export class JuegoMediumPage implements OnInit {
     this.activeButton += 1;
     if(color == 'success'){
       this.puntuacion += 1
-    }else{
+    }else if(color == 'danger'){
       this.puntuacion -= 1
+    }else if(color == 'warning'){
+      this.puntuacion *= 2
     }
     }
 

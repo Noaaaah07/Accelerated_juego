@@ -27,4 +27,7 @@ export class MenuDificultadesPage implements OnInit {
   redirectMedium(){
     this.navController.navigateForward('/juego-medium')
   }
+  redirectDificil(){
+    this.navController.navigateForward('/juego-dificil')
+  }
 }

@@ -10,12 +10,10 @@
        
     <ion-grid>
        <ion-col>
-        <p>
-          Email: {{ auth_user?.email }}
-        </p>
-        <p>
+        <p >
           Nombre del usuario: {{ auth_user?.nickname }}
         </p>
+        <ion-button (click)="logOut()"> Log Out </ion-button>
       </ion-col>
     </ion-grid>
 </ion-content>

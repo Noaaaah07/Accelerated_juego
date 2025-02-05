@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular'
 import { IonicModule } from '@ionic/angular'
 import { AuthService } from '@auth0/auth0-angular';
+import { CommonModule, DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class HomePage implements OnInit {
 
-  constructor(private navController: NavController, private http: HttpClient, public auth: AuthService) { }
+  constructor(@Inject(DOCUMENT) public document : Document,private navController: NavController, private http: HttpClient, public auth: AuthService) { }
 
   public auth_user : any;
   public db_user :any;
@@ -54,4 +55,11 @@ export class HomePage implements OnInit {
     this.navController.navigateForward('/ranking')
   }
 
+  logOut(){
+    this.auth.logout({
+      logoutParams: {
+        returnTo: this.document.location.origin
+      }
+    });
+}
 }

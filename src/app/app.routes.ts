@@ -38,6 +38,11 @@ export const routes: Routes = [
   },
   {
     path: 'juego-dificil',
-    loadComponent: () => import('./juego-dificil/juego-dificil.page').then( m => m.JuegoDificilPage)
+    loadComponent: () => import('./juego-dificil/juego-dificil.page').then( m => m.JuegoDificilPage),
+    canActivate: [ AuthGuard ]
+  },
+  {
+    path: 'pruebas',
+    loadComponent: () => import('./pruebas/pruebas.page').then( m => m.PruebasPage)
   },
 ];
