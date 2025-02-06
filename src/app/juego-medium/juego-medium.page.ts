@@ -142,10 +142,6 @@ export class JuegoMediumPage implements OnInit {
       id:24,
       color: 'success',
     },
-    {
-      id:25,
-      color: 'success',
-    },
   ]
   async mostrarAlerta() {
     const alert = await this.alertController.create({

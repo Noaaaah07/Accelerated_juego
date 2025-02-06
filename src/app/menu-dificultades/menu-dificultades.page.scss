@@ -2,24 +2,89 @@
     text-align: center;
     margin-top: 10%;
     font-size: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
+    display: flex;
+    justify-content: center;  // Centra el contenido horizontalmente
+    align-items: center;      // Centra el contenido verticalmente
+    color: #2e31e5; /* Color llamativo (rosa intenso) */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Efecto de sombra suave */
+    transition: transform 0.3s ease-in-out;
+    font-family: 'Orbitron', sans-serif;; }
 .contenedor-botones{
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 5%;
+    gap: 30px;
+    margin-top: 15%;
   
 }
+
 .bottom-left-button {
     position: fixed;
     bottom: 3px;
     left: 3px;
     z-index: 10;
   }
-.botones_menu{
-    border-radius: 0;
+#botones_menu1{
+    margin-top: 1%;
+    display: inline-block;
+    padding: 12px 24px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    text-align: center;
+    color: #000000; /* Color del texto */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente */
+    border: none; /* Sin bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    cursor: pointer; /* Mano al pasar */
+    transition: all 0.3s ease-in-out; /* Animación suave */
 }
+#botones_menu2{
+    margin-top: 1%;
+    display: inline-block;
+    padding: 12px 24px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    text-align: center;
+    color: #000000; /* Color del texto */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente */
+    border: none; /* Sin bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    cursor: pointer; /* Mano al pasar */
+    transition: all 0.3s ease-in-out; /* Animación suave */
+}
+#botones_menu3{
+    margin-top: 1%;
+    display: inline-block;
+    padding: 12px 24px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    text-align: center;
+    color: #000000; /* Color del texto */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente */
+    border: none; /* Sin bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    cursor: pointer; /* Mano al pasar */
+    transition: all 0.3s ease-in-out; /* Animación suave */
+}
+#botones_menu1:hover{
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 38, 255, 0.6); /* Efecto de elevación */
+  }
+#botones_menu2:hover{
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 38, 255, 0.6); /* Efecto de elevación */
+  }
+#botones_menu3:hover{
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 38, 255, 0.6); /* Efecto de elevación */
+  }
 ion-content{
     --background:none;
     height: 100%;

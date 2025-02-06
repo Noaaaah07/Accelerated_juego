@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true">
   <h1 id="title">ACCELERATED</h1>
-    
+  
       <div id="imagenes">
         <ion-img id="imagen1" src="../../assets/images/Mano_con_verde.png" alt="Mano_con_verde"></ion-img>
       <ion-img id="imagen2" src="../../assets/images/mano.png" alt="Mano_con_rojo"></ion-img>
@@ -10,10 +10,11 @@
        
     <ion-grid>
        <ion-col>
-        <p >
+        <p id="nickname">
           Nombre del usuario: {{ auth_user?.nickname }}
         </p>
-        <ion-button (click)="logOut()"> Log Out </ion-button>
+        <ion-button color="dark" (click)="logOut()"> Log Out </ion-button>
       </ion-col>
     </ion-grid>
 </ion-content>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">

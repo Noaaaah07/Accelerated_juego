@@ -3,12 +3,12 @@
     Selecciona la dificultad:
   </h1>
   <div class="contenedor-botones">
-    <ion-button color="dark" (click)="redirectEasy()" class="botones_menu">Fácil</ion-button>
-    <ion-button color="dark" (click)="redirectMedium()" class="botones_menu">Simplemente meh</ion-button>
-    <ion-button color="dark" class="botones_menu" (click)="redirectDificil()">Imposible</ion-button>
+    <ion-button color="transparent" fill="none" (click)="redirectEasy()" id="botones_menu1">Fácil</ion-button>
+    <ion-button color="transparent" fill="none" (click)="redirectMedium()" id="botones_menu2">Simplemente meh</ion-button>
+    <ion-button color="transparent" fill="none" id="botones_menu3" (click)="redirectDificil()">Imposible</ion-button>
   </div>
         
-  <ion-button class="bottom-left-button" color="dark" (click)="toPrincipal()" shape="round">
+  <ion-button class="bottom-left-button" color="transparent" fill="none" (click)="toPrincipal()" shape="round">
     <ion-icon slot="icon-only" name="home"></ion-icon>
   </ion-button>
 </ion-content>

@@ -149,10 +149,6 @@ export class JuegoEasyPage implements OnInit {
       id:30,
       color: 'success'
     },
-    {
-      id:31,
-      color: 'success'
-    },
   ]
 
   async mostrarAlerta() {
@@ -207,5 +203,8 @@ export class JuegoEasyPage implements OnInit {
   }
   toPrincipal(){
     this.navController.navigateForward('/home')
+  }
+  toPruebas(){
+    this.navController.navigateForward('/pruebas')
   }
 }

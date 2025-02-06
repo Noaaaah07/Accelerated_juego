@@ -2,7 +2,13 @@
   text-align: center;
   margin-top: 10%;
   font-size: 50px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;; /* Fuente moderna */
+  color: #2e31e5; /* Color llamativo (rosa intenso) */
+  text-transform: uppercase; /* Convierte el texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Efecto de sombra suave */
+  transition: transform 0.3s ease-in-out;
 }
 #boton1{
   display: inline-block;
@@ -21,6 +27,10 @@
   margin-left: 44.5%;
   margin-bottom: 3%;
 }
+#boton1:hover{
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 38, 255, 0.6); /* Efecto de elevación */
+}
 #boton2{
   display: inline-block;
   padding: 12px 24px; /* Espaciado interno */
@@ -36,6 +46,10 @@
   cursor: pointer; /* Mano al pasar */
   transition: all 0.3s ease-in-out; /* Animación suave */
   margin-left: 44%;
+}
+#boton2:hover{
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 38, 255, 0.6); /* Efecto de elevación */
 }
 #id{
   margin-bottom: 0%;
@@ -58,4 +72,13 @@ ion-content{
   background-image: url(https://static.vecteezy.com/system/resources/previews/009/749/967/non_2x/wave-background-in-blue-color-with-line-elements-technology-startup-game-suitable-for-websites-mobile-applications-posters-games-printing-and-more-free-vector.jpg);
   background-size: cover;
   background-position: center;
+}
+#nickname {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  color: #2e31e5; /* Color llamativo (rosa intenso) */
+  text-transform: uppercase; /* Convierte el texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Efecto de sombra suave */
+  transition: transform 0.3s ease-in-out;
 }

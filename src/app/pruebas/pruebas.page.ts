@@ -11,10 +11,30 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class PruebasPage implements OnInit {
-
-  constructor() { }
+  counter: number = 15;
+  intervalId: any;
+  alertShown: boolean = false; // Para manejar la interfaz bloqueada
 
   ngOnInit() {
+    this.startCountdown();
   }
 
+  startCountdown() {
+    this.intervalId = setInterval(() => {
+      if (this.counter > 0) {
+        this.counter--;
+      } else {
+        clearInterval(this.intervalId);
+        this.showAlert();
+      }
+    }, 1000);
+  }
+
+  showAlert() {
+    this.alertShown = true;
+    setTimeout(() => {
+      alert("¡Tiempo agotado!");
+      this.alertShown = false;
+    }, 100);
+  }
 }

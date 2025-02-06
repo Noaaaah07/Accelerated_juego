@@ -142,10 +142,6 @@ export class JuegoDificilPage implements OnInit {
       id:17,
       color: 'danger',
     },
-    {
-      id:18,
-      color: 'warning',
-    },
   ]
   async mostrarAlerta() {
     const alert = await this.alertController.create({
