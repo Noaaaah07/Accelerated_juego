@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ranking',
@@ -13,27 +12,20 @@ import { Router } from '@angular/router';
 })
 export class RankingPage implements OnInit {
 
-  constructor(private navController: NavController, private http: HttpClient, private router: Router) { }
+  constructor(private navController: NavController, private http: HttpClient) { }
 
-  public id: string = 'yo@colegiosantamonica.eu';
-  public user = {
-    id: '',
-    name: '',
-    puntuacion: '',
-  }
+  public db_user:any;
 
   ngOnInit() {
-    this.loadUser
+    this.loadUser()
   }
   toPrincipal(){
     this.navController.navigateForward('/home')
   }
   loadUser(){
-    this.http.get(`http://localhost:3000/user/${this.id}`).subscribe((response : any) => {
-      console.log(response);
-      this.user.id = response.id;
-      this.user.name = response.name;
-      this.user.puntuacion = response.puntuacion;
+    this.http.get(`http://localhost:3000/ranking`).subscribe((response : any) => {
+      this.db_user = response
+      console.log(this.db_user)
     });
 
 }

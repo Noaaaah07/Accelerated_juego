@@ -23,6 +23,9 @@
 .botones{
     margin-right: 2%;
 }
+.botones:hover {
+  transform: scale(1.2);
+}
 #start{
     width: 120px;
     height: 60px;

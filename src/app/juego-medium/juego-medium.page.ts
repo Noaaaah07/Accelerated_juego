@@ -147,7 +147,7 @@ export class JuegoMediumPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Instrucciones y tutorial de juego',
       subHeader: '¡Bienvenido a ACCELERATED!',
-      message: 'En este juego el objetivo es pulsar la máxima cantidad de botones posibles en un rango de 15 segundos de tiempo. Te damos opciones de cambiar de nivel a una mayor dificultad en los que podrán variar primero figura y luego figura,color... ',
+      message: 'En este juego el objetivo es pulsar la máxima cantidad de botones posibles en un rango de 20 segundos de tiempo. Te damos opciones de cambiar de nivel a una mayor dificultad en los que podrán variar los colores y la puntuación de ellos... ',
       buttons: ['OK']
     });
   await alert.present();
@@ -156,12 +156,15 @@ export class JuegoMediumPage implements OnInit {
   async mostrarAlertaFin() {
     const alert = await this.alertController.create({
       subHeader: `Tu puntuación ha sido de ${this.puntuacion} puntos`,
+      buttons: [
+        {text: 'OK',
+          handler: () => {
+            this.refreshPage(); // Llama a la función cuando se presiona "OK"
+          }}],
+      backdropDismiss: false
     });
+    
   await alert.present();
-  let intervalo = setInterval(() => {
-    this.refreshPage()
-    clearInterval(intervalo)
-  },2000)
   }
   
   deshabilitarBoton(color : string){

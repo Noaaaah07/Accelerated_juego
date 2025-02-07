@@ -5,10 +5,10 @@
     display: flex;
     justify-content: center;  // Centra el contenido horizontalmente
     align-items: center;      // Centra el contenido verticalmente
-    color: #2e31e5; /* Color llamativo (rosa intenso) */
+    color: #000000; /* Color llamativo (rosa intenso) */
     text-transform: uppercase; /* Convierte el texto en mayúsculas */
     letter-spacing: 2px; /* Espaciado entre letras */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Efecto de sombra suave */
+    text-shadow: 5px 5px 5px rgba(0, 34, 255, 0.5); /* Efecto de sombra suave */
     transition: transform 0.3s ease-in-out;
     font-family: 'Orbitron', sans-serif;; }
 .contenedor-botones{

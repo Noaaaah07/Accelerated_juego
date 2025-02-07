@@ -24,10 +24,10 @@ export class HomePage implements OnInit {
       this.auth_user = data
       console.log(this.auth_user)
       this.loadUser()
-
     }
   )
   }
+
   loadUser(){
     this.http.get(`http://localhost:3000/user`).subscribe((response : any) => {
       console.log(response)
@@ -35,16 +35,19 @@ export class HomePage implements OnInit {
       if(response == 'Usuario no encontrado'){
         this.createUser()
       }
+      console.log(this.db_user)
     });
   }
 
   createUser(){
     let user = {
-      id: this.auth_user.email,
-      name: this.auth_user.nickname,
+      id: this.db_user.email,
+      name: this.db_user.name,
+      puntuancion: ""
     }
     this.http.post(`http://localhost:3000/log`,user).subscribe((response : any) => {
       this.db_user = response
+      console.log(this.db_user)
     });
   }
 
