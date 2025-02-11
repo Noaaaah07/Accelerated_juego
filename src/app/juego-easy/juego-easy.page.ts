@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular';
-import { AlertController } from '@ionic/angular'
+import { AlertController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular'
 
 @Component({
@@ -16,146 +16,138 @@ export class JuegoEasyPage implements OnInit {
   constructor(private navController: NavController, private http: HttpClient,private alertController: AlertController) { }
 
   public activeButton: number = 0;
-  public puntuacion = 0 ;
-  public seconds: number = 25;  
+  public puntuacion: number = 0;
+  public seconds: number = 20;  
   public timer: any;            
   public isRunning: boolean = false;
-  public juego :any =[
+  public juego :any = [
     {
       id:1,
-      color: 'success'
+      color: 'success',
     },
     {
       id:2,
-      color: 'success'
+      color: 'success',
     },
     {
       id:3,
-      color: 'success',
-      puntuacion: 1,
+      color: 'danger',
 
     },
     {
       id:4,
-      color: 'success'
+      color: 'success',
     },
     {
       id:5,
-      color: 'success'
+      color: 'success',
     },
     {
       id:6,
-      color: 'success'
+      color: 'success',
     },
     {
       id:7,
-      color: 'success'
+      color: 'success',
+    },
+    {
+      id:7,
+      color: 'danger',
     },
     {
       id:8,
       color: 'success',
-      puntuacion: -1,
     },
     {
       id:9,
-      color: 'success'
+      color: 'success',
     },
     {
       id:10,
-      color: 'success'
+      color: 'success',
+    },
+    {
+      id:10,
+      color: 'danger',
     },
     {
       id:11,
-      color: 'success'
+      color: 'success',
     },
     {
       id:12,
       color: 'success',
-      puntuacion: -1,
     },
     {
       id:13,
-      color: 'success'
+      color: 'success',
+    },
+    {
+      id:13,
+      color: 'danger',
     },
     {
       id:14,
-      color: 'success'
+      color: 'success',
     },
     {
       id:15,
-      color: 'success'
+      color: 'success',
+    },
+    {
+      id:15,
+      color: 'danger',
     },
     {
       id:16,
       color: 'success',
-      puntuacion: -1,
     },
     {
       id:17,
-      color: 'success'
+      color: 'success',
+    },
+    {
+      id:17,
+      color: 'danger',
     },
     {
       id:18,
-      color: 'success'
+      color: 'success',
     },
     {
       id:19,
       color: 'success',
-      puntuacion: -1,
     },
     {
       id:20,
-      color: 'success'
+      color: 'success',
     },
     {
       id:21,
-      color: 'success'
+      color: 'success',
     },
     {
       id:22,
       color: 'success',
-      puntuacion: -1,
     },
     {
       id:23,
-      color: 'success'
+      color: 'danger',
+    },
+    {
+      id:23,
+      color: 'success',
     },
     {
       id:24,
-      color: 'success'
-    },
-    {
-      id:25,
-      color: 'success'
-    },
-    {
-      id:26,
-      color: 'success'
-    },
-    {
-      id:27,
-      color: 'success'
-    },
-    {
-      id:28,
       color: 'success',
-      puntuacion: -1,
-    },
-    {
-      id:29,
-      color: 'success'
-    },
-    {
-      id:30,
-      color: 'success'
     },
   ]
-
   async mostrarAlerta() {
     const alert = await this.alertController.create({
       header: 'Instrucciones y tutorial de juego',
       subHeader: '¡Bienvenido a ACCELERATED!',
-      message: 'En este juego el objetivo es pulsar la máxima cantidad de botones posibles en un rango de 25 segundos de tiempo. Te damos opciones de cambiar de nivel a una mayor dificultad en los que podrán variar los colores y la puntuación de ellos... ',
+      message: 'En este juego el objetivo es pulsar la máxima cantidad de botones posibles en un rango de 20 segundos de tiempo. Te damos opciones de cambiar de nivel a una mayor dificultad en los que podrán variar los colores y la puntuación de ellos... PULSA EL START PARA INICIAR UNA PARTIDA! ',
       buttons: ['OK']
     });
   await alert.present();
@@ -175,10 +167,12 @@ export class JuegoEasyPage implements OnInit {
   await alert.present();
   }
   
-  deshabilitarBoton( color : string){
+  deshabilitarBoton(color : string){
     this.activeButton += 1;
     if(color == 'success'){
       this.puntuacion += 1
+    }else{
+      this.puntuacion -= 1
     }
     }
 

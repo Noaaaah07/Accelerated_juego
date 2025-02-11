@@ -17,8 +17,8 @@ export class JuegoDificilPage implements OnInit {
 
   public activeButton: number = 0;
   public puntuacion: number = 0;
-  public seconds: number = 15;  
-  public timer: any;            
+  public seconds: number = 10;  
+  public timer: any;
   public isRunning: boolean = false;
   public juego :any = [
     {
@@ -30,7 +30,7 @@ export class JuegoDificilPage implements OnInit {
       color: 'danger',
     },
     {
-      id:2,
+      id:1,
       color: 'warning',
 
     },
@@ -39,12 +39,16 @@ export class JuegoDificilPage implements OnInit {
       color: 'success',
     },
     {
-      id:3,
-      color: 'success',
+      id:2,
+      color: 'danger',
     },
     {
       id:3,
       color: 'danger',
+    },
+    {
+      id:3,
+      color: 'success',
     },
     {
       id:4,
@@ -52,11 +56,19 @@ export class JuegoDificilPage implements OnInit {
     },
     {
       id:4,
-      color: 'danger',
+      color: 'warning',
     },
     {
       id:5,
       color: 'success',
+    },
+    {
+      id:5,
+      color: 'danger',
+    },
+    {
+      id:5,
+      color: 'tertiary',
     },
     {
       id:6,
@@ -68,10 +80,14 @@ export class JuegoDificilPage implements OnInit {
     },
     {
       id:7,
+      color: 'danger',
+    },
+    {
+      id:7,
       color: 'success',
     },
     {
-      id:8,
+      id:7,
       color: 'warning',
     },
     {
@@ -83,48 +99,64 @@ export class JuegoDificilPage implements OnInit {
       color: 'danger',
     },
     {
-      id:9,
-      color: 'success',
+      id:8,
+      color: 'danger',
     },
     {
       id:9,
-      color: 'danger',
+      color: 'success',
     },
     {
       id:10,
       color: 'success',
     },
     {
+      id:10,
+      color: 'danger',
+    },
+    {
+      id:10,
+      color: 'danger',
+    },
+    {
       id:11,
       color: 'success',
     },
     {
-      id:12,
-      color: 'success',
-    },
-    {
-      id:12,
+      id:11,
       color: 'danger',
     },
     {
-      id:13,
-      color: 'success',
-    },
-    {
-      id:13,
-      color: 'danger',
-    },
-    {
-      id:13,
+      id:11,
       color: 'warning',
+    },
+    {
+      id:12,
+      color: 'success',
+    },
+    {
+      id:12,
+      color: 'danger',
+    },
+    {
+      id:13,
+      color: 'success',
+    },
+    {
+      id:13,
+      color: 'danger',
+    },
+    {
+      id:13,
+      color: 'tertiary',
     },
     {
       id:14,
       color: 'success',
     },
     {
-      id:15,
-      color: 'success',
+      id:14,
+      color: 'warning',
     },
     {
       id:15,
@@ -135,12 +167,20 @@ export class JuegoDificilPage implements OnInit {
       color: 'success',
     },
     {
-      id:17,
-      color: 'success',
+      id:16,
+      color: 'danger',
+    },
+    {
+      id:16,
+      color: 'tertiary',
     },
     {
       id:17,
       color: 'danger',
+    },
+    {
+      id:17,
+      color: 'success',
     },
   ]
 
@@ -148,7 +188,7 @@ export class JuegoDificilPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Instrucciones y tutorial de juego',
       subHeader: '¡Bienvenido a ACCELERATED!',
-      message: 'En este juego el objetivo es pulsar la máxima cantidad de botones posibles en un rango de 15 segundos de tiempo. Te damos opciones de cambiar de nivel a una mayor dificultad en los que podrán variar los colores y la puntuación de ellos... ',
+      message: 'En este juego el objetivo es pulsar la máxima cantidad de botones posibles en un rango de 15 segundos de tiempo. Te damos opciones de cambiar de nivel a una mayor dificultad en los que podrán variar los colores y la puntuación de ellos... PULSA EL START PARA INICIAR UNA PARTIDA! ',
       buttons: ['Entendido'],
       backdropDismiss: false
     });
@@ -178,7 +218,9 @@ export class JuegoDificilPage implements OnInit {
     }else if(color == 'danger'){
       this.puntuacion -= 1
     }else if(color == 'warning'){
-      this.puntuacion *= 2
+      this.puntuacion *= 1.5
+    }else if(color == 'tertiary'){
+      this.seconds += 2
     }
     }
 

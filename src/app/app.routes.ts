@@ -45,4 +45,12 @@ export const routes: Routes = [
     path: 'pruebas',
     loadComponent: () => import('./pruebas/pruebas.page').then( m => m.PruebasPage)
   },
+  {
+    path: 'juego-easy',
+    loadComponent: () => import('./juego-easy/juego-easy.page').then( m => m.JuegoEasyPage)
+  },
+  {
+    path: 'juego-medium',
+    loadComponent: () => import('./juego-medium/juego-medium.page').then( m => m.JuegoMediumPage)
+  },
 ];

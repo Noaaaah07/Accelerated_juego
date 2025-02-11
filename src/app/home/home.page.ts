@@ -29,22 +29,24 @@ export class HomePage implements OnInit {
   }
 
   loadUser(){
-    this.http.get(`http://localhost:3000/user`).subscribe((response : any) => {
+    this.http.get(`http://localhost:3000/user/${this.auth_user.email}`).subscribe((response : any) => {
       console.log(response)
       this.db_user = response
       if(response == 'Usuario no encontrado'){
         this.createUser()
       }
       console.log(this.db_user)
+      console.log(this.db_user)
     });
   }
 
   createUser(){
     let user = {
-      id: this.db_user.email,
-      name: this.db_user.name,
-      puntuancion: ""
+      id: this.auth_user.email,
+      name: this.auth_user.nickname,
+      puntuancion: 0
     }
+    console.log(user)
     this.http.post(`http://localhost:3000/log`,user).subscribe((response : any) => {
       this.db_user = response
       console.log(this.db_user)

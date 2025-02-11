@@ -1,5 +1,5 @@
 <ion-content [fullscreen]="true">
-  <ion-grid>
+  <ion-grid id="grid">
     <ion-col>
       <ion-button color="dark" (click)="mostrarAlerta()" size="small">Instrucciones</ion-button>
       <b id="puntuacion">Tu puntuacion es de {{ this.puntuacion }} puntos</b>
@@ -10,9 +10,59 @@
       </ion-grid>
     </ion-row>
     <br>
-  @for(boton of juego; track boton; let i = $index){
-    <ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" class="botones_juego" shape="round"></ion-button>
-  }
+    <ion-row class="row">
+      @for(boton of juego; track boton; let i = $index){
+        @if(i <= 9){
+
+        <ion-col class="cols">
+          @if(boton.id == activeButton){
+            <ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" class="botones_juego" shape="round"></ion-button>
+          }
+        </ion-col>
+      }
+      <!--<ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" class="botones_juego" shape="round"></ion-button>-->
+      }
+    </ion-row>
+    <ion-row class="row">
+      @for(boton of juego; track boton; let i = $index){
+        @if(i >=10 && i <= 19){
+
+        <ion-col class="cols">
+          @if(boton.id == activeButton){
+            <ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" class="botones_juego" shape="round"></ion-button>
+          }
+        </ion-col>
+      }
+      <!--<ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" class="botones_juego" shape="round"></ion-button>-->
+      }
+    </ion-row>
+    <ion-row class="row">
+      @for(boton of juego; track boton; let i = $index){
+        @if(i >=20 && i <= 29){
+
+        <ion-col class="cols">
+          @if(boton.id == activeButton){
+            <ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" class="botones_juego" shape="round"></ion-button>
+          }
+        </ion-col>
+      }
+      <!--<ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" class="botones_juego" shape="round"></ion-button>-->
+      }
+    </ion-row>
+    <ion-row class="row">
+      @for(boton of juego; track boton; let i = $index){
+        @if(i >=30){
+
+        <ion-col class="cols">
+          @if(boton.id == activeButton){
+            <ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" class="botones_juego" shape="round"></ion-button>
+          }
+        </ion-col>
+      }
+      <!--<ion-button (click)="deshabilitarBoton(boton.color)" [disabled]="boton.id != activeButton" [color]="(boton.id != activeButton) ? 'success' : boton.color" class="botones_juego" shape="round"></ion-button>-->
+      }
+    </ion-row>
+  
   
 </ion-grid>
   
