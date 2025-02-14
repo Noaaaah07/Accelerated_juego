@@ -32,7 +32,7 @@ export class RankingPage implements OnInit {
 
 
   loadUser(){
-    this.http.get(`http://localhost:3000/user/${this.auth_user.email}`).subscribe((response : any) => {
+    this.http.get(`http://localhost:3000/log`).subscribe((response : any) => {
       console.log(response)
       this.db_user = response
       console.log(this.db_user.id)

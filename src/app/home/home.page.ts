@@ -35,18 +35,15 @@ export class HomePage implements OnInit {
       if(response == 'Usuario no encontrado'){
         this.createUser()
       }
-      console.log(this.db_user)
-      console.log(this.db_user)
     });
   }
 
   createUser(){
     let user = {
-      id: this.auth_user.email,
+      id: this.auth_user.name,
       name: this.auth_user.nickname,
       puntuancion: 0
     }
-    console.log(user)
     this.http.post(`http://localhost:3000/log`,user).subscribe((response : any) => {
       this.db_user = response
       console.log(this.db_user)
