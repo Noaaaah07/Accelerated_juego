@@ -14,7 +14,7 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 })
 export class HomePage implements OnInit {
 
-  constructor(@Inject(DOCUMENT) public document : Document,private navController: NavController, private http: HttpClient, public auth: AuthService) { }
+  constructor(private commonmodule:CommonModule, @Inject(DOCUMENT) public document : Document,private navController: NavController, private http: HttpClient, public auth: AuthService) { }
 
   public auth_user : any;
   public db_user :any;
@@ -29,7 +29,7 @@ export class HomePage implements OnInit {
   }
 
   loadUser(){
-    this.http.get(`http://localhost:3000/user/${this.auth_user.email}`).subscribe((response : any) => {
+    this.http.get(`https://repaso-6ub6.onrender.com/user/${this.auth_user.email}`).subscribe((response : any) => {
       console.log(response)
       this.db_user = response
       if(response == 'Usuario no encontrado'){
@@ -52,9 +52,6 @@ export class HomePage implements OnInit {
 
   pasarMenu(){
     this.navController.navigateForward('/menu-dificultades')
-  }
-  pasarRanking(){
-    this.navController.navigateForward('/ranking')
   }
 
   logOut(){

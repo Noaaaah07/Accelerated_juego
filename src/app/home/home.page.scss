@@ -12,8 +12,8 @@
 }
 #boton1{
   display: inline-block;
-  padding: 12px 24px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de la fuente */
+  padding: 24px 48px; /* Espaciado interno */
+  font-size: 20px; /* Tamaño de la fuente */
   font-weight: bold; /* Negrita */
   text-transform: uppercase; /* Texto en mayúsculas */
   text-align: center;
@@ -24,28 +24,12 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
   cursor: pointer; /* Mano al pasar */
   transition: all 0.3s ease-in-out; /* Animación suave */
-  margin-left: 44.5%;
-  margin-bottom: 3%;
+  margin-left: 42%;
+  margin-bottom: 6%;
 }
 #boton1:hover{
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 38, 255, 0.6); /* Efecto de elevación */
-}
-#boton2{
-  display: inline-block;
-  padding: 12px 24px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de la fuente */
-  font-weight: bold; /* Negrita */
-  text-transform: uppercase; /* Texto en mayúsculas */
-  text-align: center;
-  color: #000000; /* Color del texto */
-  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente */
-  border: none; /* Sin bordes */
-  border-radius: 20px; /* Bordes redondeados */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
-  cursor: pointer; /* Mano al pasar */
-  transition: all 0.3s ease-in-out; /* Animación suave */
-  margin-left: 44%;
 }
 #boton2:hover{
   transform: scale(1.1);

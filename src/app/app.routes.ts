@@ -23,11 +23,6 @@ export const routes: Routes = [
     canActivate: [ AuthGuard ]
   },
   {
-    path: 'ranking',
-    loadComponent: () => import('./ranking/ranking.page').then( m => m.RankingPage),
-    canActivate: [ AuthGuard ]
-  },
-  {
     path: 'log-in',
     loadComponent: () => import('./log-in/log-in.page').then( m => m.LogInPage),
   },
