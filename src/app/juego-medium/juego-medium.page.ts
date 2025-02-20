@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NavController } from '@ionic/angular';
+import { Router, RouterEvent } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular'
 
 @Component({
-  selector: 'app-juego-medium',
-  templateUrl: './juego-medium.page.html',
-  styleUrls: ['./juego-medium.page.scss'],
+  selector: 'app-juego-easy',
+  templateUrl: './juego-easy.page.html',
+  styleUrls: ['./juego-easy.page.scss'],
   standalone:true,
   imports: [IonicModule]
 })
-export class JuegoMediumPage implements OnInit {
+export class JuegoEasyPage implements OnInit {
 
-  constructor(private navController: NavController, private http: HttpClient,private alertController: AlertController) { }
+  constructor(private routerEvent: RouterEvent,private router:Router, private http: HttpClient,private alertController: AlertController) { }
 
   public activeButton: number = 0;
   public puntuacion: number = 0;
@@ -205,6 +205,6 @@ export class JuegoMediumPage implements OnInit {
     window.location.reload();
   }
   toPrincipal(){
-    this.navController.navigateForward('/home')
+    this.router.navigate(['/home'])
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NavController } from '@ionic/angular';
+import { Router, RouterEvent } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular'
 
@@ -13,7 +13,7 @@ import { IonicModule } from '@ionic/angular'
 })
 export class JuegoEasyPage implements OnInit {
 
-  constructor(private navController: NavController, private http: HttpClient,private alertController: AlertController) { }
+  constructor(private routerEvent: RouterEvent,private router:Router, private http: HttpClient,private alertController: AlertController) { }
 
   public activeButton: number = 0;
   public puntuacion: number = 0;
@@ -199,6 +199,6 @@ export class JuegoEasyPage implements OnInit {
     window.location.reload();
   }
   toPrincipal(){
-    this.navController.navigateForward('/home')
+    this.router.navigate(['/home'])
   }
 }
