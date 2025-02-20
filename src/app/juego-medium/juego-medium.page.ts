@@ -11,7 +11,7 @@ import { IonicModule } from '@ionic/angular'
   standalone:true,
   imports: [IonicModule]
 })
-export class JuegoEasyPage implements OnInit {
+export class JuegoMediumPage implements OnInit {
 
   constructor(private routerEvent: RouterEvent,private router:Router, private http: HttpClient,private alertController: AlertController) { }
 
