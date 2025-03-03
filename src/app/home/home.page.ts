@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular'
 import { AuthService } from '@auth0/auth0-angular';
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { IonContent, IonHeader, IonToolbar, IonTitle,
-  IonList, IonIcon, IonMenu, IonLabel, IonRouterOutlet,
-   IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem } from '@ionic/angular';
+import { IonGrid,
+  IonCol,
+  IonRow,
+  IonImg } from '@ionic/angular';
 
 
 @Component({
@@ -13,9 +14,10 @@ import { IonContent, IonHeader, IonToolbar, IonTitle,
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone:true,
-  imports: [IonContent, IonHeader, IonToolbar, IonTitle,
-    IonList, IonIcon, IonMenu, IonLabel, IonRouterOutlet,
-     IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem]
+  imports: [IonGrid,
+    IonCol,
+    IonRow,
+    IonImg]
 })
 export class HomePage implements OnInit {
 
