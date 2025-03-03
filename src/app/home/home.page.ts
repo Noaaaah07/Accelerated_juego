@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular'
 import { AuthService } from '@auth0/auth0-angular';
 import { CommonModule, DOCUMENT } from '@angular/common';
+import { FormsModule } from '@angular/forms'; // Para trabajar con formularios (ngModel)
 import { IonContent, IonHeader, IonToolbar, IonTitle,
   IonList, IonIcon, IonMenu, IonLabel, IonRouterOutlet,
    IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem,IonGrid,IonCol,IonRow,IonImg } from '@ionic/angular/standalone';
@@ -15,7 +16,7 @@ import { IonContent, IonHeader, IonToolbar, IonTitle,
   standalone:true,
   imports: [IonContent, IonHeader, IonToolbar, IonTitle,
     IonList, IonIcon, IonMenu, IonLabel, IonRouterOutlet,
-     IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem,IonGrid,IonCol,IonRow,IonImg]
+     IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem,IonGrid,IonCol,IonRow,IonImg,FormsModule]
 })
 export class HomePage implements OnInit {
 
@@ -37,21 +38,6 @@ export class HomePage implements OnInit {
     this.http.get(`https://repaso-6ub6.onrender.com/user/${this.auth_user.email}`).subscribe((response : any) => {
       console.log(response)
       this.db_user = response
-      if(response == 'Usuario no encontrado'){
-        this.createUser()
-      }
-    });
-  }
-
-  createUser(){
-    let user = {
-      id: this.auth_user.name,
-      name: this.auth_user.nickname,
-      puntuancion: 0
-    }
-    this.http.post(`http://localhost:3000/log`,user).subscribe((response : any) => {
-      this.db_user = response
-      console.log(this.db_user)
     });
   }
 
