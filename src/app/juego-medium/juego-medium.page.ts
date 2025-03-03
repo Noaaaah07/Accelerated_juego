@@ -4,7 +4,7 @@ import { Router, RouterEvent } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { IonContent, IonHeader, IonToolbar, IonTitle,
   IonList, IonIcon, IonMenu, IonLabel, IonRouterOutlet,
-   IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem } from '@ionic/angular/standalone';
+   IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem,IonGrid,IonCol,IonRow,IonImg } from '@ionic/angular/standalone';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { IonContent, IonHeader, IonToolbar, IonTitle,
   standalone:true,
   imports: [IonContent, IonHeader, IonToolbar, IonTitle,
     IonList, IonIcon, IonMenu, IonLabel, IonRouterOutlet,
-     IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem]
+     IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem,IonGrid,IonCol,IonRow,IonImg]
 })
 export class JuegoMediumPage implements OnInit {
 
