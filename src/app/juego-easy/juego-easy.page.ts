@@ -8,7 +8,7 @@ import { IonContent, IonHeader, IonToolbar, IonTitle,
 
 
 @Component({
-  selector: 'app-juego-dificil',
+  selector: 'app-juego-easy',
   templateUrl: './juego-easy.page.html',
   styleUrls: ['./juego-easy.page.scss'],
   standalone:true,
@@ -18,12 +18,12 @@ import { IonContent, IonHeader, IonToolbar, IonTitle,
 })
 export class JuegoEasyPage implements OnInit {
 
-  constructor(private router: Router, private http: HttpClient,private alertController: AlertController) { }
+  constructor(private router:Router, private http: HttpClient,private alertController: AlertController) { }
 
   public activeButton: number = 0;
   public puntuacion: number = 0;
-  public seconds: number = 10;  
-  public timer: any;
+  public seconds: number = 20;  
+  public timer: any;            
   public isRunning: boolean = false;
   public juego :any = [
     {
@@ -31,81 +31,37 @@ export class JuegoEasyPage implements OnInit {
       color: 'success',
     },
     {
-      id:1,
-      color: 'danger',
+      id:2,
+      color: 'success',
     },
     {
-      id:1,
-      color: 'warning',
+      id:3,
+      color: 'danger',
 
     },
     {
-      id:2,
-      color: 'success',
-    },
-    {
-      id:2,
-      color: 'danger',
-    },
-    {
-      id:3,
-      color: 'danger',
-    },
-    {
-      id:3,
-      color: 'success',
-    },
-    {
       id:4,
       color: 'success',
     },
     {
-      id:4,
-      color: 'warning',
-    },
-    {
       id:5,
       color: 'success',
-    },
-    {
-      id:5,
-      color: 'danger',
-    },
-    {
-      id:5,
-      color: 'tertiary',
     },
     {
       id:6,
       color: 'success',
     },
     {
-      id:6,
-      color: 'danger',
-    },
-    {
-      id:7,
-      color: 'danger',
-    },
-    {
       id:7,
       color: 'success',
     },
     {
       id:7,
-      color: 'warning',
+      color: 'danger',
     },
     {
       id:8,
       color: 'success',
-    },
-    {
-      id:8,
-      color: 'danger',
-    },
-    {
-      id:8,
-      color: 'danger',
     },
     {
       id:9,
@@ -120,30 +76,14 @@ export class JuegoEasyPage implements OnInit {
       color: 'danger',
     },
     {
-      id:10,
-      color: 'danger',
-    },
-    {
       id:11,
       color: 'success',
-    },
-    {
-      id:11,
-      color: 'danger',
-    },
-    {
-      id:11,
-      color: 'warning',
     },
     {
       id:12,
       color: 'success',
     },
     {
-      id:12,
-      color: 'danger',
-    },
-    {
       id:13,
       color: 'success',
     },
@@ -152,16 +92,12 @@ export class JuegoEasyPage implements OnInit {
       color: 'danger',
     },
     {
-      id:13,
-      color: 'tertiary',
-    },
-    {
       id:14,
       color: 'success',
     },
     {
-      id:14,
-      color: 'warning',
+      id:15,
+      color: 'success',
     },
     {
       id:15,
@@ -172,36 +108,56 @@ export class JuegoEasyPage implements OnInit {
       color: 'success',
     },
     {
-      id:16,
-      color: 'danger',
-    },
-    {
-      id:16,
-      color: 'tertiary',
-    },
-    {
-      id:17,
-      color: 'danger',
-    },
-    {
       id:17,
       color: 'success',
     },
+    {
+      id:17,
+      color: 'danger',
+    },
+    {
+      id:18,
+      color: 'success',
+    },
+    {
+      id:19,
+      color: 'success',
+    },
+    {
+      id:20,
+      color: 'success',
+    },
+    {
+      id:21,
+      color: 'success',
+    },
+    {
+      id:22,
+      color: 'success',
+    },
+    {
+      id:23,
+      color: 'danger',
+    },
+    {
+      id:23,
+      color: 'success',
+    },
+    {
+      id:24,
+      color: 'success',
+    },
   ]
-
   async mostrarAlerta() {
     const alert = await this.alertController.create({
       header: 'Instrucciones y tutorial de juego',
       subHeader: '¡Bienvenido a ACCELERATED!',
-      message: 'En este juego el objetivo es pulsar la máxima cantidad de botones posibles en un rango de 15 segundos de tiempo. Te damos opciones de cambiar de nivel a una mayor dificultad en los que podrán variar los colores y la puntuación de ellos... PULSA EL START PARA INICIAR UNA PARTIDA! ',
-      buttons: ['Entendido'],
-      backdropDismiss: false
+      message: 'En este juego el objetivo es pulsar la máxima cantidad de botones posibles en un rango de 20 segundos de tiempo. Te damos opciones de cambiar de nivel a una mayor dificultad en los que podrán variar los colores y la puntuación de ellos... PULSA EL START PARA INICIAR UNA PARTIDA! ',
+      buttons: ['OK']
     });
   await alert.present();
   }
-
   ngOnInit() {  }
-
   async mostrarAlertaFin() {
     const alert = await this.alertController.create({
       subHeader: `Tu puntuación ha sido de ${this.puntuacion} puntos`,
@@ -220,12 +176,8 @@ export class JuegoEasyPage implements OnInit {
     this.activeButton += 1;
     if(color == 'success'){
       this.puntuacion += 1
-    }else if(color == 'danger'){
+    }else{
       this.puntuacion -= 1
-    }else if(color == 'warning'){
-      this.puntuacion *= 1.5
-    }else if(color == 'tertiary'){
-      this.seconds += 2
     }
     }
 
