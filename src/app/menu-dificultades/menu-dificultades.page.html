@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true">
+  <h1 id="title">
+    Selecciona la dificultad:
+  </h1>
+  <div class="contenedor-botones">
+    <ion-button color="transparent" fill="none" (click)="redirectEasy()" id="botones_menu1">Fácil</ion-button>
+    <ion-button color="transparent" fill="none" (click)="redirectMedium()" id="botones_menu2">Simplemente meh</ion-button>
+    <ion-button color="transparent" fill="none" id="botones_menu3" (click)="redirectDificil()">Imposible</ion-button>
+  </div>
+        
+  <ion-button class="bottom-left-button" color="transparent" fill="none" (click)="toPrincipal()" shape="round">
+    <ion-icon slot="icon-only" name="home"></ion-icon>
+  </ion-button>
+</ion-content>

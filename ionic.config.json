@@ -1,0 +1,7 @@
+{
+  "name": "Accelerated_juego",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
