@@ -4,7 +4,7 @@ import { AuthGuard } from '@auth0/auth0-angular';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'log-in',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
