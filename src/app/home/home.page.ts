@@ -14,13 +14,13 @@ import { IonContent, IonHeader, IonToolbar, IonTitle,
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone:true,
-  imports: [IonContent, IonHeader, IonToolbar, IonTitle,
+  imports: [CommonModule,IonContent, IonHeader, IonToolbar, IonTitle,
     IonList, IonIcon, IonMenu, IonLabel, IonRouterOutlet,
      IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem,IonGrid,IonCol,IonRow,IonImg,FormsModule]
 })
 export class HomePage implements OnInit {
 
-  constructor(private commonmodule:CommonModule, @Inject(DOCUMENT) public document : Document,private navController: NavController, private http: HttpClient, public auth: AuthService) { }
+  constructor(@Inject(DOCUMENT) public document : Document,private navController: NavController, private http: HttpClient, public auth: AuthService) { }
 
   public auth_user : any;
   public db_user :any;
