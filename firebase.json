@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "accelerated_game-aster",
+    "public": "www",
     "ignore": [
       "firebase.json",
       "**/.*",
