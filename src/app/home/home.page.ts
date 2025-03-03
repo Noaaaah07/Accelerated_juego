@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NavController } from '@ionic/angular'
+import { Router } from '@angular/router'; // Para navegar entre páginas.
 import { AuthService } from '@auth0/auth0-angular';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // Para trabajar con formularios (ngModel)
@@ -20,7 +20,7 @@ import { IonContent, IonHeader, IonToolbar, IonTitle,
 })
 export class HomePage implements OnInit {
 
-  constructor(@Inject(DOCUMENT) public document : Document,private navController: NavController, private http: HttpClient, public auth: AuthService) { }
+  constructor(@Inject(DOCUMENT) public document : Document,private router: Router, private http: HttpClient, public auth: AuthService) { }
 
   public auth_user : any;
   public db_user :any;
@@ -42,7 +42,7 @@ export class HomePage implements OnInit {
   }
 
   pasarMenu(){
-    this.navController.navigateForward('/menu-dificultades')
+    this.router.navigate(['/menu-dificultades']);
   }
 
   logOut(){

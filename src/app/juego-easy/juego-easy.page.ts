@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router, RouterEvent } from '@angular/router';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { IonContent, IonHeader, IonToolbar, IonTitle,
   IonList, IonIcon, IonMenu, IonLabel, IonRouterOutlet,
@@ -18,7 +18,7 @@ import { IonContent, IonHeader, IonToolbar, IonTitle,
 })
 export class JuegoEasyPage implements OnInit {
 
-  constructor(private routerEvent: RouterEvent,private router:Router, private http: HttpClient,private alertController: AlertController) { }
+  constructor(private router:Router, private http: HttpClient,private alertController: AlertController) { }
 
   public activeButton: number = 0;
   public puntuacion: number = 0;
