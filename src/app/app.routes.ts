@@ -4,7 +4,7 @@ import { AuthGuard } from '@auth0/auth0-angular';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'juego-dificil',
     pathMatch: 'full',
   },
   {
