@@ -5,7 +5,7 @@ import { AuthService } from '@auth0/auth0-angular';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { IonContent, IonHeader, IonToolbar, IonTitle,
   IonList, IonIcon, IonMenu, IonLabel, IonRouterOutlet,
-   IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem } from '@ionic/angular/standalone';
+   IonMenuButton, IonMenuToggle, IonListHeader, IonButton,IonButtons,IonModal,IonRadio,IonItem } from '@ionic/angular';
 
 
 @Component({
